@@ -392,7 +392,7 @@ namespace SwissbotCore
                                 await item.botMSG.DeleteAsync();
                                 await item.linkMsg.DeleteAsync();
                                 Global.SubsList.Remove(item);
-                                try { await _client.GetUser(item.SubmitterID).SendMessageAsync($"Your butter submission was approved by {arg3.User.Value.Username}#{arg3.User.Value.Discriminator} ({item.url})"); }
+                                try { await _client.GetUser(item.SubmitterID).SendMessageAsync($"Your butter submission was denied by {arg3.User.Value.Username}#{arg3.User.Value.Discriminator} ({item.url})"); }
                                 catch (Exception ex) { Global.ConsoleLog($"Error, {ex.Message}", ConsoleColor.Red); }
                                 rs = "Denied";
                             }
